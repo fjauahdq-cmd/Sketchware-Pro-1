@@ -391,13 +391,6 @@ public class MainActivity extends BasePermissionAppCompatActivity {
         bundle.putString(FirebaseAnalytics.Param.SCREEN_NAME, "MainActivity");
         bundle.putString(FirebaseAnalytics.Param.SCREEN_CLASS, "MainActivity");
         mAnalytics.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW, bundle);
-
-        // SKET-UP: sincronização automática + atualiza a lista ao baixar projetos
-        pro.sketchware.sync.SyncManager.maybeAutoSync(this, () -> {
-            if (activeFragment instanceof ProjectsFragment) {
-                projectsFragment.refreshProjectsList();
-            }
-        });
     }
 
     private void allFilesAccessCheck() {
