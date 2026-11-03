@@ -2,6 +2,18 @@ name: Build SKET-UP APK
 
 on:
   workflow_dispatch:
+  push:
+    branches: [integracao-sket-up]
+    paths:
+      - '.github/workflows/build-sketup.yml'
+      - 'app/**'
+      - 'gradle/**'
+      - 'build.gradle'
+      - 'gradle.properties'
+      - 'gradlew'
+      - 'gradlew.bat'
+      - 'public-stable-ids.txt'
+      - 'settings.gradle'
 
 permissions:
   contents: read
